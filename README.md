@@ -22,6 +22,18 @@ Or install it yourself as:
 
 ## Usage
 
+`require 'stax-nag'` in your `stax` project, and all stacks will have
+a `nag` subcommand, which generates a template and runs it
+through the linter:
+
+```
+$ stax app nag
+WARN  sgssh   W5     Security Groups found with cidr open to world on egress
+FAIL  sgssh2  F1000  Missing egress rule means all traffic is allowed outbound.  Make this explicit if it is desired configuration
+1 failures
+
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
