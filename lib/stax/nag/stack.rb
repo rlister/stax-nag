@@ -16,7 +16,7 @@ module Stax
 
     desc 'nag', 'run nag for stack'
     def nag
-      results = cfn_nag.audit(cloudformation_string: cfer_generate_string)
+      results = cfn_nag.audit(cloudformation_string: cfer_generate)
       print_table results[:violations].map { |v|
         [color(v.type, COLORS), v.logical_resource_ids.join(' '), v.id, v.message]
       }
